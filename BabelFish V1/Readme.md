@@ -32,5 +32,4 @@ Make sure that it is run under Windows 7 (option checked) and also that the opti
 14. Run the Labview with the double arrow. You will see the VC++ dialog box, Click "Configuration Frame 2" and you can check in the PDCSimulator that it received a "send configuration frame 2"
 15. Then you can follow the video for operating the Labview PDC_Port.vi
 
-[Read more words!](Documentation/BFv1_Presentation.pdf)
-[Read more words!](BFv1_WhitePaper.pdf)
+In order to learn more about the BabelFish V1, the readers are suggested to see these documentations (1) [White Paper about BFv1!](Documentation/BFv1_WhitePaper.pdf) and (2) [BFv1 Presentation!](Documentation/BFv1_Presentation.pdf)
