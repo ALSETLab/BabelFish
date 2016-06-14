@@ -1,0 +1,16 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {10F6097F-8BD4-4B80-BD97-A5BFF7D5F31D} = s 'DigitalFld Class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Both'
+			}
+			TypeLib = s '{97CCA51C-FAAB-4ECB-91FB-D4B8E0EAD0BA}'
+			Version = s '1.0'
+		}
+	}
+}

@@ -1,0 +1,16 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {FF3C0821-1717-413C-8687-44D810C80215} = s 'DigField Class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Both'
+			}
+			TypeLib = s '{97CCA51C-FAAB-4ECB-91FB-D4B8E0EAD0BA}'
+			Version = s '1.0'
+		}
+	}
+}

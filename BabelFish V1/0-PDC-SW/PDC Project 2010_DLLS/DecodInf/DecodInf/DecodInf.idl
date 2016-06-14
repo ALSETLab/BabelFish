@@ -1,0 +1,175 @@
+// DecodInf.idl : IDL source for DecodInf
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (DecodInf.tlb) and marshalling code.
+
+#include "mtxattr.h"
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(8134D006-6645-47F0-9185-65A6B4493CB3),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICFG2Params : IDispatch{
+	[id(1)] HRESULT FirstPhasor([in,out] BSTR* pbstrVal);
+	[id(2)] HRESULT LastPhasor([in,out] BSTR* pbstrVal);
+	[id(3)] HRESULT NextPhasor([in,out] BSTR* pbstrVal);
+	[id(4)] HRESULT InsertPhasor([in] BSTR bstrPhasor);
+	[id(5)] HRESULT ResizePhasorAndAppend(USHORT u16_newSize, BSTR bstr);
+	[id(6)] HRESULT InsertPMU([in] BSTR bstrPMU);
+	[id(7)] HRESULT FirstPMU([in,out] BSTR* pbstrVal);
+	[id(8)] HRESULT NextPMU([out] BSTR* pbstrVal);
+	[propget, id(9)] HRESULT NoofPMUs([out, retval] ULONG* pVal);
+	[propput, id(9)] HRESULT NoofPMUs([in] ULONG newVal);
+	[propget, id(10)] HRESULT NoofPhasors([out, retval] ULONG* pVal);
+	[propput, id(10)] HRESULT NoofPhasors([in] ULONG newVal);
+	[id(11)] HRESULT InsertPMUPHN(BSTR PMUName, SHORT u16_PHN);
+	[id(12)] HRESULT Find([in]BSTR bstrPMU, [in,out]USHORT* u16_NoofPHN);
+	[id(13)] HRESULT IndexPMU([in] ULONG u32_Index, [in,out] BSTR* pbstrPMU);
+	[id(14)] HRESULT FindPMUIndex([in] BSTR bstrPMU, [in,out] ULONG* pu32_Index);
+	[id(15)] HRESULT FindPhasorIndex([in] BSTR bstrPhasor, [in,out] ULONG* pu32_PhIndex);
+	[id(16)] HRESULT InsertAnalog(BSTR bstrAnalog);
+	[id(17)] HRESULT ResizeAnalogAndAppend([in] USHORT u16_newSize, [in] BSTR bstrAnalog);
+	[id(18)] HRESULT FirstAnalog([in,out] BSTR* pbstrAng);
+	[id(19)] HRESULT NextAnalog([in,out] BSTR* pbstrAng);
+	[id(20)] HRESULT InsertPMUANNMR([in] BSTR bstrPMU, [in] USHORT u16_ANNMR);
+	[id(21)] HRESULT FindNoofAnalogs([in] BSTR bstrPMU, [in,out] USHORT* pu16_ANNMR);
+	[id(22)] HRESULT InsertPMUDGNMR([in] BSTR bstrPMU, [in] USHORT u16_DGNMR);
+	[id(23)] HRESULT FindNoofDigitals([in] BSTR bstrPMU, [in,out] USHORT* pu16_DGNMR);
+	[id(24)] HRESULT InsertDigital([in] BSTR bstrDigital);
+	[id(25)] HRESULT FirstDigital([in,out] BSTR* pbstrDigital);
+	[id(26)] HRESULT NextDigital([in,out] BSTR* pbstrDigital);
+	[id(27)] HRESULT ResizeDigitalAndAppend(USHORT u16_newSize, [in] BSTR bstrDigital);
+	[id(28)] HRESULT FindAnalogIndex([in] BSTR bstrAnalog, [in,out] ULONG* pu32_AnalogIndex);
+	[id(29)] HRESULT FindDigitalIndex(BSTR bstrDigital, ULONG* pu32_DigitalIndex);
+	[propget, id(30)] HRESULT TotNoofDigitals([out, retval] ULONG* pVal);
+	[propput, id(30)] HRESULT TotNoofDigitals([in] ULONG newVal);
+	[id(31)] HRESULT RestAnalogList(void);
+};
+[
+	object,
+	uuid(596B9861-A125-4882-A944-156D732A90DB),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IRTDTParams : IDispatch{
+	[propget, id(1)] HRESULT TS_Year([out, retval] ULONG* pVal);
+	[propput, id(1)] HRESULT TS_Year([in] ULONG newVal);
+	[propget, id(2)] HRESULT TS_Month([out, retval] ULONG* pVal);
+	[propput, id(2)] HRESULT TS_Month([in] ULONG newVal);
+	[propget, id(3)] HRESULT TS_Day([out, retval] ULONG* pVal);
+	[propput, id(3)] HRESULT TS_Day([in] ULONG newVal);
+	[propget, id(4)] HRESULT TS_Hour([out, retval] ULONG* pVal);
+	[propput, id(4)] HRESULT TS_Hour([in] ULONG newVal);
+	[propget, id(5)] HRESULT TS_Minute([out, retval] ULONG* pVal);
+	[propput, id(5)] HRESULT TS_Minute([in] ULONG newVal);
+	[propget, id(6)] HRESULT TS_Second([out, retval] ULONG* pVal);
+	[propput, id(6)] HRESULT TS_Second([in] ULONG newVal);
+	[propget, id(7)] HRESULT TS_OLE_VAR([out, retval] DOUBLE* pVal);
+	[propput, id(7)] HRESULT TS_OLE_VAR([in] DOUBLE newVal);
+	[propget, id(8)] HRESULT Millisecond([out, retval] ULONG* pVal);
+	[propput, id(8)] HRESULT Millisecond([in] ULONG newVal);
+	[id(9)] HRESULT SavePhVals([in] FLOAT XVal, [in] FLOAT YVal, [in] FLOAT flDtType);
+	[propget, id(10)] HRESULT PhasorXVal([out, retval] FLOAT* pVal);
+	[propput, id(10)] HRESULT PhasorXVal([in] FLOAT newVal);
+	[propget, id(11)] HRESULT PhasorYVal([out, retval] FLOAT* pVal);
+	[propput, id(11)] HRESULT PhasorYVal([in] FLOAT newVal);
+	[propget, id(12)] HRESULT MagAng([out, retval] FLOAT* pVal);
+	[propput, id(12)] HRESULT MagAng([in] FLOAT newVal);
+	[id(16)] HRESULT LoadPhVals([in,out] FLOAT* pPhXVal, [in,out] FLOAT* pPhYVal, [in,out] FLOAT* pPhType);
+	[id(17)] HRESULT CleanPhasors(void);
+	[id(18)] HRESULT ChPhListBegin(void);
+	[propget, id(19)] HRESULT FREQ([out, retval] FLOAT* pVal);
+	[propput, id(19)] HRESULT FREQ([in] FLOAT newVal);
+	[propget, id(20)] HRESULT DFREQ([out, retval] FLOAT* pVal);
+	[propput, id(20)] HRESULT DFREQ([in] FLOAT newVal);
+	[id(21)] HRESULT SaveFDQANDGVals(void);
+	[id(22)] HRESULT LoadFDQANDGVals([in,out] FLOAT* pflFREQ, [in,out] FLOAT* pflDFREQ, [in,out] FLOAT* pflDIG, [in,out] FLOAT* pflANG);
+	[propget, id(23)] HRESULT Analog([out, retval] FLOAT* pVal);
+	[propput, id(23)] HRESULT Analog([in] FLOAT newVal);
+	[propget, id(24)] HRESULT Digital([out, retval] FLOAT* pVal);
+	[propput, id(24)] HRESULT Digital([in] FLOAT newVal);
+	[id(25)] HRESULT SaveADVals(void);
+	[id(26)] HRESULT LoadANVals(FLOAT* pflAnalogVal/*, FLOAT* pflDigitalVal*/);
+	[id(27)] HRESULT SaveDigVals(void);
+	[id(28)] HRESULT LoadDigVals([in,out] FLOAT* pflDigitalVal);
+	[id(29)] HRESULT DigHex2BinStr(void);
+	[propget, id(30)] HRESULT HexAnalog([out, retval] CHAR* pVal);
+	[propput, id(30)] HRESULT HexAnalog([in] CHAR newVal);
+	[propget, id(31)] HRESULT DigBinString([out, retval] BSTR* pVal);
+	[propput, id(31)] HRESULT DigBinString([in] BSTR newVal);
+	[id(32)] HRESULT SaveDigHexVals(void);
+	[id(33)] HRESULT LoadRtDigStrs([in,out] BSTR* bstrDigBinVal);
+	[id(34)] HRESULT CleanFDQ(void);
+	[id(35)] HRESULT CleanANParams(void);
+	[id(36)] HRESULT CleanDGParams(void);
+	[id(37)] HRESULT CleanDigStr(void);
+};
+[
+	object,
+	uuid(D7B3E6B7-6685-4898-86DF-1DC267ED49E2),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IDigitalFld : IDispatch{
+};
+[
+	object,
+	uuid(04462318-5A10-4344-BBB3-DBCE15510353),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IDigField : IDispatch{
+	[propget, id(1)] HRESULT DigFld([out, retval] CHAR* pVal);
+	[propput, id(1)] HRESULT DigFld([in] CHAR newVal);
+	[id(2)] HRESULT SaveDigHexVals(void);
+};
+[
+	uuid(97CCA51C-FAAB-4ECB-91FB-D4B8E0EAD0BA),
+	version(1.0),
+]
+library DecodInfLib
+{
+	importlib("stdole2.tlb");
+	[		
+		custom(TLBATTR_TRANS_REQUIRED,0),
+		uuid(F58152DF-40EA-4049-AC35-2D4544EB8EFD)		
+	]
+	coclass CFG2Params
+	{
+		[default] interface ICFG2Params;
+	};
+	[		
+		custom(TLBATTR_TRANS_REQUIRED,0),
+		uuid(4523DCE4-C04B-4068-AC84-721201EC0737)		
+	]
+	coclass RTDTParams
+	{
+		[default] interface IRTDTParams;
+	};
+	[		
+		custom(TLBATTR_TRANS_REQUIRED,0),
+		uuid(10F6097F-8BD4-4B80-BD97-A5BFF7D5F31D)		
+	]
+	coclass DigitalFld
+	{
+		[default] interface IDigitalFld;
+	};
+	[		
+		custom(TLBATTR_TRANS_REQUIRED,0),
+		uuid(FF3C0821-1717-413C-8687-44D810C80215)		
+	]
+	coclass DigField
+	{
+		[default] interface IDigField;
+	};
+};
+

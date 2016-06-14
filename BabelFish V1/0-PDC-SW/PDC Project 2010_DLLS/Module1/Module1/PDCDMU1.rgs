@@ -1,0 +1,16 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {36D010D4-EA2E-4E55-B0BD-0DE9D475A8F3} = s 'PDCDMU1 Class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Both'
+			}
+			TypeLib = s '{28CFEA3F-F584-4B18-98C2-133866B34A11}'
+			Version = s '1.0'
+		}
+	}
+}
